@@ -1,7 +1,8 @@
+
 def word_count(text):
     num_words = len(text.split())
-    print(f"{num_words} words found in the document")
-
+    return num_words
+    
 def char_count(text):
     texts = text.lower()
     char_count = {}
@@ -13,4 +14,16 @@ def char_count(text):
             if char in alph:
                     char_count[char] = 1        
     return char_count
-        
+
+def compiled_data(char_count):
+
+    sort_dict = sorted(char_count.items(), key=lambda item: item[1], reverse=True)
+    sort_char = {}
+    for key, value in sort_dict:
+        sort_char[key] = value
+    return sort_char
+    
+
+
+
+
